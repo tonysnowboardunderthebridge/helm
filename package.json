@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "platformatic start",
+    "clean": "rm -fr ./dist",
+    "build": "platformatic compile"
+  },
+  "devDependencies": {
+    "fastify": "^4.21.0",
+    "typescript": "~5.1.6"
+  },
+  "dependencies": {
+    "platformatic": "^0.35.0"
+  },
+  "engines": {
+    "node": "^18.8.0"
+  }
+}
