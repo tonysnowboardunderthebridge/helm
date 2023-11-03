@@ -15,11 +15,12 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     env:
-     PLT_SERVER_HOSTNAME: TEST_HOSTNAME 
-     PORT: TEST_PORT 
-     PLT_SERVER_LOGGER_LEVEL: TEST_PLT_SERVER_LOGGER 
+     PLT_SERVER_HOSTNAME: XYZ 
+     PORT: WWWW 
+     PLT_SERVER_LOGGER_LEVEL: Debug 
      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-     PLT_TYPESCRIPT: TEST_PLT_TYPE 
+     PLT_TYPESCRIPT: BOH 
+     DEPLOY_SERVICE_HOST: https://plt-development-deploy-service.fly.dev 
 
     steps:
       - name: Checkout application project repository
