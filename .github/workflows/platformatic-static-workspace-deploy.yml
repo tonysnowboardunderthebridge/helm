@@ -6,6 +6,8 @@ on:
     paths-ignore:
       - 'docs/**'
       - '**.md'
+  workflow_dispatch:
+    inputs:
 
 jobs:
   build_and_deploy:
@@ -13,12 +15,11 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     env:
+     PLT_SERVER_HOSTNAME: TEST_HOSTNAME 
+     PORT: TEST_PORT 
+     PLT_SERVER_LOGGER_LEVEL: TEST_PLT_SERVER_LOGGER 
      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-     PLT_SERVER_LOGGER_LEVEL: info 
-     PORT: 3001 
-     PLT_SERVER_HOSTNAME: 127.0.0.1 
-     PLT_TYPESCRIPT: true 
-     DEPLOY_SERVICE_HOST: https://plt-development-deploy-service.fly.dev 
+     PLT_TYPESCRIPT: TEST_PLT_TYPE 
 
     steps:
       - name: Checkout application project repository
@@ -33,4 +34,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           platformatic_workspace_id: ${{ secrets.PLATFORMATIC_STATIC_WORKSPACE_ID }}
           platformatic_workspace_key: ${{ secrets.PLATFORMATIC_STATIC_WORKSPACE_API_KEY }}
-          platformatic_config_path: ./platformatic.db.json
+          platformatic_config_path: platformatic.db.json
